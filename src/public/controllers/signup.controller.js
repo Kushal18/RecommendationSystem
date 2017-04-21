@@ -16,31 +16,9 @@ angular.module("RecommendationSystem")
         return {favCuisine: cuisine};
       });
   $scope.done_signup = function(user){
-       console.log($scope.state);
-       
-           {
-            // show preferences page
-            console.log("show preference page");
-            $scope.show_preferences = true;
-            $scope.show_signup = false;
-            var dataval = {
-              "email":$scope.emailsign,
-              "password":$scope.passwordsign,
-              "firstname":$scope.firstname,
-              "lastname":$scope.lastname,
-            };
-            $http({
-              method : "POST",
-              url : '/api/signup',
-              data : dataval
-            }).success(function(data) {
-              console.log("signed up: "+data);
-              //checking the response data for statusCode
-      }).error(function(error) {
-              //write failure code
-              console.log("Error up: "+error);
-    });
-  }
+      console.log($scope.state);
+       $scope.show_preferences = true;
+       $scope.show_signup = false;
 }
 
 
@@ -67,6 +45,12 @@ angular.module("RecommendationSystem")
               console.log($scope.cuisine);
               console.log($scope.state);
               console.log($scope.contactnumber);
+
+              console.log($scope.emailsign);
+              console.log($scope.passwordsign);
+              console.log($scope.firstname);
+              console.log($scope.lastname);
+              console.log($scope.address);
               
               $http({
               method : "POST",
